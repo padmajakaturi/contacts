@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous">
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p" crossorigin="anonymous"></script>
+</head>
+<body>
+<section class="h-100 h-custom" style="font-family: timesnewroman">
+
+  <div class="container py-5 h-100" >
+<form th:action="@{/contacts/update/{id}(id=${contact.id})}" method="post" th:object="${contact}">
+<div class="card" style="box-sizing:border-box;max-width:400px; border:2 px solid black;box-shadow:0px 0px 15px;margin:100px auto;padding:20px 20px">
+<h4 style="text-align: center;color:green">Edit Contact</h4>
+		<img alt="" src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcT1rTLeQraa9s-Rkj2_KMPOzh30CwK1G2D85A&s" style="max-width:30%;margin:0 auto">
+<input type="text" placeholder="enter number" th:field="*{mobile}" required style="border-radius:50px;padding:5px 10px"><br>
+<input type="text" placeholder="enter name" th:field="*{name}" required style="border-radius:50px;padding:5px 10px"><br>
+<input type="email" placeholder="enter email" th:field="*{email}" required style="border-radius:50px;padding:5px 10px"><br>
+<button type="submit" class="btn btn-primary" style="width:40%;margin:0 auto">save</button>
+</div>
+
+ </form>
+ </div>
+</section></body>
+</html>
